@@ -18,9 +18,8 @@ class Program
 
         Console.WriteLine($"{sayi1} ile {sayi2} arasındaki asal sayılar:");
         foreach (int asal in asalSayilar)
-        {
-            Console.WriteLine(asal);
-        }
+        {Console.WriteLine(asal); }
+        
         Console.ReadLine();
     }
 
@@ -28,30 +27,22 @@ class Program
     {
         bool[] asalMi = new bool[bitis + 1];
         for (int i = 2; i <= bitis; i++)
-        {
-            asalMi[i] = true;
-        }
+        {asalMi[i] = true;}
 
         for (int p = 2; p * p <= bitis; p++)
         {
             if (asalMi[p])
             {
                 for (int i = p * p; i <= bitis; i += p)
-                {
-                    asalMi[i] = false;
-                }
-            }
-        }
+                {asalMi[i] = false;}
+            }}
 
         List<int> asalSayilar = new List<int>();
         for (int i = baslangic; i <= bitis; i++)
         {
             if (asalMi[i])
-            {
-                asalSayilar.Add(i);
-            }
+            { asalSayilar.Add(i);}
         }
-
         return asalSayilar;
 
         Console.ReadLine();
